@@ -1,14 +1,26 @@
-<script>
-    const itemsprice=document.querySelectorAll(".price")
-    let totalAmount= 0
 
-    itemsprice.forEach((item)=>{
-        console.log(item.textContent)
-        totalAmount+=Number(item.textContent)
-    })
 
-    console.log(totalAmount)
+let prices = document.querySelectorAll(".prices");
 
-    // console.log(itemsprice)
-  </script>
+let total = 0;
+
+prices.forEach(function(price) {
+
+    total = total + Number(price.innerText);
+
+});
+
+let table = document.querySelector("table");
+
+let tr = document.createElement("tr");
+
+let td = document.createElement("td");
+
+td.setAttribute("colspan", "2");
+
+td.innerText = "Total Price: " + total;
+
+tr.appendChild(td);
+
+table.appendChild(tr);
 
